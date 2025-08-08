@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import {  useState } from "react";
 import { Button } from "./ui/button";
-import { Check, ChevronsUpDown, PlusCircle, StoreIcon, Store as storeIcon} from "lucide-react";
+import { Check, ChevronsUpDown, PlusCircle, Store as StoreIcon} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandList, CommandSeparator } from "./ui/command";
 import { CommandItem } from "cmdk";
@@ -57,7 +57,7 @@ export default function StoreSwitcher({
             >
                 <StoreIcon className="mr-2 h-4 w-4" />
                 {currentStore?.label || "Select a store"}
-                <ChevronsUpDown className="ml-2 h-4 w-4" />
+                <ChevronsUpDown className="ml-2 h-5 w-5" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[200px] p-0">
@@ -75,7 +75,7 @@ export default function StoreSwitcher({
                          <StoreIcon className="mr-2 h-4 w-4" />
                             {store.label}
                             <Check className={cn(
-                                "ml-auto h-4 w-4",
+                                "ml-auto h-5 w-5",
                                 currentStore?.value === store.value ? "opacity-100" : "opacity-0"
                             )}/>
                         </CommandItem>
